@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-color: #E9E9FD;
+    height: 100vh;
+    width: 100vw;
+}
+.header{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7474C4;
+    padding: 20px;
+    color: whitesmoke
+    
+}
+.header button,.btn{
+    background-color: transparent;
+    padding: 20px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.rooms{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;  
+}
+.rooms-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    flex-direction: column;
+    border:5px solid #7474C4;
+    width: 40vw;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 50vh;
+    overflow-y: auto;
+}
+.room{
+    background-color: #7474C4;
+    color: white;
+    margin: 10px;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
+}
+.rooms input{
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    outline:2px solid #7474C4;
+    border-radius: 5px;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+.btn{
+    color:#7474C4 ;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+}
+.login h1{
+    font-size: xxx-large;
+}
+.login button{
+    background-color: #7474C4;
+    color: white;
+    margin-top: 20px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
