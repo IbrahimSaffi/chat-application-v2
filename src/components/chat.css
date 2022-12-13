@@ -1,49 +1,40 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    /* background: linear-gradient(to top , #8AA5BE,#C7D6E3); */
-    height: 90vh;
-    /* overflow: hidden; */
-}
-.chat-card {
+.chat-page{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25vw;
-    margin-left: 40vw;
-    margin-top: 5vh;
-    height: 70vh;
+}
+.chat-card{
     background-color: white;
-   position: absolute;
-   z-index: -1;
-  
-}
-.title-bar {
+    width: 25vw;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+.title-bar{
+    display: flex;
+    flex-direction:row;
+    background-color: #7474C4;
     width: 100%;
-    height: 20%;
-    align-items: center;
-    padding: 10px;
-    background-color: #6A96D8;
-    color: white;
+    justify-content: space-between;
+    padding: 20px;
 }
-.name-dot {
-    display: flex;
-    justify-content: flex-start;
-    width: 50%;
-    align-items: center;
-    padding: 10px;
+.title-bar *{
     font-weight: 800;
-    gap: 5%;
-}
-.close {
-    font-size: larger;
     color: white;
+
+}
+.title-bar button{
+    background-color: transparent;
+    border: none;
+}
+.name-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 .dot {
     width: 3px;
@@ -52,57 +43,52 @@ body {
     background-color: white;
     border-radius: 3px;
 }
-.chat-time {
-    width: 90%;
+.btm-line {
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.418);
+        height: 1px;
+}
+.new-msg{
     display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    gap: 10px;
-    margin: 20px;
+    justify-content: center;
     align-items: center;
+}
+.new-msg button{
+    font-size: small;
+}
+input{
+    border: none;
+    outline: none;
+}
+.date-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     color: rgba(128, 128, 128, 0.39);
     font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.chat-text-container{
+    font-size: small;
+    padding: 0;
+    margin: 0;
+}
+.chat-text{
+    padding: 0;
+    background-color: transparent !important;
+    margin: 0;
 }
 .line {
     height: 1px;
     width: 50%;
     background-color: rgba(128, 128, 128, 0.39);
-    opacity: 40%;
-}
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-    /* height: 70vh; */
-    overflow: hidden;
-}
-.chat {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.chat-text {
-    position: relative;
-    height: fit-content;
-    z-index: 2;
-}
-.msg-time {
-    width: 100%;
-    margin-bottom: 3px;
-    color: gray;
+    opacity: 30%;
 }
 .chat-1 :nth-child(2) , .chat-2 :nth-child(2) {
-    padding: 10px;
+    padding: 5px;
+    padding-right: 10px;
     border-radius: 5px;
 }
 .chat-1 :nth-child(2){
@@ -127,9 +113,21 @@ body {
     left: 0px;
     z-index: -1;
 }
-.chat{ 
+.chats{ 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    height: 330px;
+    overflow-y: scroll;
+    padding-top: 50px;
+}
+.chat{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.author, .time{
+    font-size: x-small;
 }
 .chat-2 *{ 
     align-self: flex-end;
@@ -138,43 +136,4 @@ body {
     left: 93%;
     transform: skew(-60deg);
     background-color: #E3EAF1;
-}
-.new-msg {
-    display: flex;
-    flex-direction: row;
-    height: 5vh;
-    justify-content: center;
-    justify-content: space-between;
-    padding: 15px;
-    align-items: center;
-    z-index: 2;
-    position: absolute;
-    bottom: 130px;
-    left: 40%;
-    width: 25vw;
-    outline: none;
-}
-.btn {
-    text-transform: uppercase;
-    color:#4c83d6;
-    font-weight: 600;
-}
-.msg {
-    border: none;
-    color: black;
-    padding: 10px;
-}
-input:focus {
-    outline: none;
-    border:1px solid gray;
-}
-.btm-line {
-    width: 100%;
-    background-color: rgba(128, 128, 128, 0.418);
-    height: 1px;
-}
-button {
-    background: none;
-    border: none;
-cursor: pointer;
 }

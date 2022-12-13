@@ -68,8 +68,19 @@ export default function App() {
             console.log(err)
         }
     }
-    async function addChat(roomId) {
-
+    async function addChat(roomId,msgText,sender,time) {
+      const message ={
+        msgText,sender,time
+      }
+      let msgRef = ref(database, 'rooms/'+Object.keys(state.rooms)[roomId]+"/messages")
+      let newMsg = push(msgRef)
+      console.log(Object.keys(state.rooms)[roomId],msgText,sender,time)
+      try{
+          set(newMsg,message)
+      }
+      catch(err){
+         console.log(err)
+      }
     }
     // .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -93,7 +104,7 @@ export default function App() {
             <Routes>
                 <Route path='/' element={<Login signIn = {signIn} />} />
                 <Route path='/rooms' element={<Rooms addRoom={addRoom} getRooms={getRooms}/>} />
-                <Route path='/chat' element={<Chat />} />
+                <Route path='/chat' element={<Chat addChat={addChat} />} />
             </Routes>
         </div>
     )
